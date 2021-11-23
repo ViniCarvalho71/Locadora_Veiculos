@@ -1,0 +1,26 @@
+.center{
+    text-align: center;
+}
+.center-all{
+    align-items: center;
+}
+
+.css-container{
+    width: 70rem;
+    height:auto;
+    border-radius: 2rem;
+    box-shadow: black  5px 7px 5px  ;
+    
+}
+label{
+    margin-top: 1rem;
+}
+body{
+    background-color: #a29bfe;
+}
+.nav-css{
+    box-shadow: black  3px 7px 5px  ; 
+}
+a{
+    text-decoration: none;
+}

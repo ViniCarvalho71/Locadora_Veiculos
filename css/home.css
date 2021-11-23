@@ -1,0 +1,31 @@
+.img-fluid{
+   height: 30rem;
+
+}
+.center{
+    align-items: center;
+    text-align: center;
+}
+.btn-css{
+    color: white;
+}
+.box{
+    background-color: white;
+    border-radius: 1.5rem;
+    
+}
+.box:hover{
+    box-shadow: 1px 2px 21px 1px #000000 ;
+    transition: 0.5s;
+}
+
+.produtos{
+    margin-right: 0;
+}
+h1{
+    text-align: center;
+    font-size: 5rem;
+}
+.logout{
+    margin-left: 1rem ;
+}
