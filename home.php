@@ -14,7 +14,8 @@
     <title>Login</title>
     
 </head>
-<body >
+<body>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav-css text-white">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Vinícius Locadora</a>
@@ -43,16 +44,16 @@
         <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
         <button class="btn btn-outline-light " type="submit">Pesquisar</button>
       </form>
-      <form action="login-activities/logout.php">
-      <button class="btn btn-outline-light logout " type="submit"><i class="fas fa-sign-out-alt"></i></button>
-      </form>
+      <a href="login-activities\logout.php" class="btn btn-outline-light logout " type="submit"><i class="fas fa-sign-out-alt"></i></a>
     </div>
   </div>
 </nav>
+<div class="container-fluid">
 <div class="row mt-2">
   <div>
     <h1>Veículos</h1>
   </div>
+</div>
 </div>
 <?php
           $conn=mysqli_connect("localhost", "root", "","usuario");      
@@ -65,9 +66,7 @@
              echo '<h2 class="mt-2">'.$ln['modelo'].'</h2> <br />';   
              echo '<img class="img-fluid" src="img/'.$ln['imagem'].'" /> <br />';
              echo 'Preço : R$ '.number_format($ln['preco'], 2, ',', '.').'<br />';
-             echo '<form action="carrinho.php?acao=add&id='.$ln['id'].'">
-             <button class=" mt-3 mb-3 btn btn-outline-dark bg-dark btn-css" type="submit"><a href="carrinho.php?acao=add&id='.$ln['id'].'">Comprar</a></button>
-             </form>';
+             echo '<a class=" mt-3 mb-3 btn btn-outline-dark bg-dark btn-css" href="carrinho.php?acao=add&id='.$ln['id'].'">Locar</a>';
              echo '</div>';
             
           }
@@ -76,7 +75,7 @@
          </div>';
     ?>
 
-   <script src="js/jquery-3.6.0.js"></script>
+    <script src="js/jquery-3.6.0.js"></script>
     <script src="js/bootstrap.js"></script>
 
 </body>

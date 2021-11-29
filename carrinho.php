@@ -51,24 +51,29 @@
    <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="public\css\bootstrap.min.css">
+    <link rel="stylesheet" href="css/carrinho.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <title>Carrinho de compras</title>   
    </head>
 
     <body>
     <table>
         
+    <div class="container-fluid">
+    <table class="table table-hover table-borderless">
         <thead>
-              <tr>
-                <th width="244">Produto</th>
-                <th width="79">Quantidade</th>
-                <th width="89">Preço</th>
-                <th width="100">SubTotal</th>
-                <th width="64">Remover</th>
-              </tr>
+          <tr>
+            <th scope="col">Descrição</th>
+            <th scope="col">Quantidade</th>
+            <th scope="col">Preço</th>
+            <th scope="col">Subtotal</th>
+            <th scope="col">Remover</th>
+          </tr>
         </thead>
-                <form action="?acao=up" method="post">
+        <form action="?acao=up" method="post">
         <tfoot>
                <tr>
                 <td colspan="5"><input type="submit" value="Atualizar Carrinho" /></td>
@@ -76,7 +81,8 @@
                 <td colspan="5"><a href="home.php">Continuar Comprando</a></td>
         </tfoot>
          
-        <tbody>
+     
+
                    <?php
                          if(count($_SESSION['carrinho']) == 0){
                             echo '<tr><td colspan="5">Não há produto no carrinho</td></tr>';
@@ -92,27 +98,31 @@
                                   $preco = number_format($ln['preco'], 2, ',', '.');
                                   $sub   = number_format($ln['preco'] * $qtd, 2, ',', '.');
                                   
-                                  $total += $ln['preco'] * $qtd;
+                                  $total += $ln['preco'] * $qtd; 
+          
                                
-                               echo '<tr>       
-                                     <td>'.$nome.'</td>
+                               echo '
+                               <tbody>
+                                  <tr>       
+                                     <th scope = "row">'.$nome.'</td>
                                      <td><input type="text" size="3" name="prod['.$id.']" value="'.$qtd.'" /></td>
                                      <td>R$ '.$preco.'</td>
                                      <td>R$ '.$sub.'</td>
-                                     <td><a href="?acao=del&id='.$id.'">Remove</a></td>
+                                     <td><a href="?acao=del&id='.$id.'"><i class="fas fa-minus-circle"></i></a></td>
                                   </tr>';
                             }
                                $total = number_format($total, 2, ',', '.');
                                echo '<tr>
                                         <td colspan="4">Total</td>
                                         <td>R$ '.$total.'</td>
-                                  </tr>';
+                                  </tr> </tbody>';
+                                 
                          }
                    ?>
-       
-         </tbody>
-            </form>
+      
     </table>
+    <script src="js/jquery-3.6.0.js"></script>
+    <script src="js/bootstrap.js"></script>
 
     </body>
     </html>
