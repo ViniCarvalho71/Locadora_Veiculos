@@ -31,7 +31,6 @@
             Cadastros
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="cliente.php">Clientes</a></li>
             <li><a class="dropdown-item" href="veiculo.php">Veículos</a></li>
           </ul>
         </li>
